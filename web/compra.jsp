@@ -4,6 +4,7 @@
     Author     : primo
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,20 @@
         <title>Mercado Libre Compras</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+        Float dinero;
+        String user= request.getParameter("User");
+        String rfc= request.getParameter("RFC");
+        try{
+        dinero= Float.parseFloat(request.getParameter("Dinero"));
+        }catch(Exception e){
+        dinero = (float)0;
+        }
+        if(dinero>0 && user!=null){
+            ArrayList<Articulos> lista= new ArrayList<Articulos>();
+ 
+        
+        %>
+        
     </body>
 </html>
