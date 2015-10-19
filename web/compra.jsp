@@ -14,7 +14,7 @@
     </head>
     <body>
         <%
-        float dinero;
+        int dinero;
         Articulo prueba = new Articulo();
         ArrayList<Articulo> articulo= new ArrayList<Articulo>();
         
@@ -24,7 +24,7 @@
         try{
         dinero= Integer.parseInt(request.getParameter("Dinero"));
         }catch(Exception e){
-        dinero = (float)0;
+            dinero=0;
         }
         if(dinero>0 && user!=null){
             prueba.crearLista(articulo);
