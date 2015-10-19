@@ -19,6 +19,7 @@
         int dinero;
         String usuario= request.getParameter("usuario");
         String RFC= request.getParameter("RFC");
+        String artElegido;
         
         Articulo art = new Articulo();
         
@@ -45,7 +46,6 @@
                     out.print(art.imprimirOpciones());
                     %>
                     <div align="center">
-                        
                         <input type="submit" value="Agregar a Carrito">
                     </div>
         <%  
