@@ -23,9 +23,8 @@
         dinero = (float)0;
         }
         if(dinero>0 && user!=null){
-            ArrayList<Articulos> lista= new ArrayList<Articulos>();
- 
-        
+            ArrayList<Articulo> lista= new ArrayList<Articulo>();
+
         %>
         
     </body>
