@@ -39,7 +39,7 @@
             out.println("Error de Datos");
         }
                %>
-               <!--<input type="submit" value="agregar">-->
+               <input type="submit" value="comprar">
            </form> 
         </div>
         %>
