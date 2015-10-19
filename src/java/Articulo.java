@@ -10,19 +10,24 @@ public class Articulo {
     
     String nombre;
     String descripcion;
-    Float precio;
+    int precio;
 	
-	public void Articulo(String nombre, String descripcion, Float precio){
+        public Articulo(){}
+	public Articulo(String nombre, String descripcion, int precio)
+        {
 		this.nombre=nombre;
 		this.descripcion=descripcion;
 		this.precio=precio;
 	}
 
-	public static void setArtToLista(ArrayList<Articulo> articulo){
-		articulo.add(new Articulo("Pantalla LED", "50 pulgadas full HD",(float)10500));
-		articulo.add(new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",(float)8500));
-		articulo.add(new Articulo("XBOX ONE", "Halo edition",(float)7500));
-		return;
+	public void setArtToLista(ArrayList<Articulo> articulo)
+        {
+                Articulo art1 = new Articulo("Pantalla LED", "50 pulgadas full HD",10500);
+                Articulo art2 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);
+                Articulo art3 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);
+		articulo.add(art1);
+		articulo.add(art2);
+		articulo.add(art3);
 	}
     
 }
