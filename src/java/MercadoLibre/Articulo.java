@@ -28,7 +28,7 @@ public class Articulo {
         {
                 Articulo art1 = new Articulo("Pantalla LED", "50 pulgadas full HD",10500);
                 Articulo art2 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);
-                Articulo art3 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);
+                Articulo art3 = new Articulo("XBOX ONE ", "Halo Edition 1 TB",7500);
 		listaArticulos.add(art1);
 		listaArticulos.add(art2);
 		listaArticulos.add(art3);
@@ -43,7 +43,7 @@ public class Articulo {
 		{
 		toPrint = Iterator_Print.next();
 
-		articulo = articulo + "<li>" + toPrint.nombre + "</li>" + "<li>" + toPrint.descripcion + "</li>" + "<li>" + toPrint.precio + " pesos" + "</li>";
+		articulo = articulo + "<li>" + toPrint.nombre +" "+ toPrint.descripcion +" $"+ toPrint.precio + "</li>";
 		}
 		articulo=articulo+"</ul>";
 		return articulo;

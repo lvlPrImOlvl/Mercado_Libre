@@ -41,14 +41,14 @@
                     <%
                     
                     art.crearLista();
-                    out.println( art.imprimirLista()+"Hola prueba");
+                    out.println( art.imprimirLista());
 
                     %>
                     <div>
-                    Añadir compra a 
-                    <form action="añadir.jsp" method="POST">
-                    <input type="submit" value="agregar">
-        <%
+                        <form action="añadir.jsp" method="POST">
+                        <input type="submit" value="Agregar articulo al carrito de compras">
+                    </div>
+        <%  
                  /*  out.println(Articulo.imprimirOpciones(lista,"agregar"));*/
                 }else
                 {
@@ -60,6 +60,6 @@
         %>
                
            </form> 
-        </div>
+
     </body>
 </html>
