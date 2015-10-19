@@ -42,11 +42,11 @@
                     
                     art.crearLista();
                     out.println( art.imprimirLista());
-
+                    out.print(art.imprimirOpciones());
                     %>
-                    <div>
-                        <form action="añadir.jsp" method="POST">
-                        <input type="submit" value="Agregar articulo al carrito de compras">
+                    <div align="center">
+                        
+                        <input type="submit" value="Agregar a Carrito">
                     </div>
         <%  
                  /*  out.println(Articulo.imprimirOpciones(lista,"agregar"));*/

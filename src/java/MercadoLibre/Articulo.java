@@ -14,6 +14,9 @@ public class Articulo {
     String descripcion;
     int precio;
     String articulo;
+    Articulo toPrint;
+    Iterator<Articulo> Iterator_Print;
+    
     ArrayList<Articulo> listaArticulos= new ArrayList<Articulo>();
     
         public Articulo(){}
@@ -36,10 +39,9 @@ public class Articulo {
         
 	public String imprimirLista()
         {
-                Articulo toPrint;
                 articulo="";
 		articulo.concat("<ul>");
-		Iterator<Articulo> Iterator_Print = listaArticulos.iterator();
+		Iterator_Print = listaArticulos.iterator();
 		while(Iterator_Print.hasNext())
 		{
 		toPrint = Iterator_Print.next();
@@ -50,8 +52,19 @@ public class Articulo {
 		return articulo;
 	}        
         
-	public static String imprimirOpciones(){
-
+	public String imprimirOpciones(){
+            
+            articulo= " ";
+            Iterator_Print = listaArticulos.iterator();
+            
+            articulo = articulo + "<select name='agregar"+ "'>";
+            while (Iterator_Print.hasNext())
+            {
+            toPrint = Iterator_Print.next();
+            articulo=articulo+"<option>" + toPrint.nombre + "</option>";
+            }
+            articulo=articulo+"</select>";
+            return articulo;
 	}        
         
     
