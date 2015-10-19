@@ -4,6 +4,7 @@
     Author     : primo
 --%>
 
+<%@page import="MercadoLibre.Articulo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,21 +16,19 @@
     <body>
         <%
         int dinero;
+        String usuario;
+        String RFC;
         Articulo prueba = new Articulo();
         ArrayList<Articulo> articulo= new ArrayList<Articulo>();
         
-        String user= request.getParameter("User");
-        String rfc= request.getParameter("RFC");
+        usuario= request.getParameter("usuario");
+        RFC= request.getParameter("RFC");
+        dinero= Integer.parseInt(request.getParameter("dinero"));
         
-        try{
-        dinero= Integer.parseInt(request.getParameter("Dinero"));
-        }catch(Exception e){
-            dinero=0;
-        }
-        if(dinero>0 && user!=null){
+        if(dinero > 0 && usuario != null){
             prueba.crearLista(articulo);
         %>
-        
+        HOLA
         <div>
             Añadir compra a 
            <form action="añadir.jsp" method="POST">

@@ -20,7 +20,7 @@
             RFC: <br>
             <input type="text" name="RFC"><br>
             Dinero: <br>
-            <input type="text" name="Dinero"><br>
+            <input type="text" name="dinero"><br>
             <input type="submit" name="goStore">            
         </form>
     </body>
