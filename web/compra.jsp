@@ -39,8 +39,9 @@
                     <h1>Bienvenido a la tienda de compras</h1>
                     <h2>Estos son los productos que estan a la venta</h2> 
                     <%
+                    
                     art.crearLista();
-                   /*out.println( Producto.imprimirLista(lista)+"Hola prueba");     */
+                    out.println( art.imprimirLista()+"Hola prueba");
 
                     %>
                     <div>
