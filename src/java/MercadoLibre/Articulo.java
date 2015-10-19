@@ -32,6 +32,11 @@ public class Articulo {
 		articulo.add(art3);
 	}
         
+	public String imprimirLista(ArrayList<Articulo> lista){
+
+
+	}        
+        
         
     
 }
