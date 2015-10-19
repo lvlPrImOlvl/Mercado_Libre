@@ -20,7 +20,7 @@ public class Articulo {
 		this.precio=precio;
 	}
 
-	public void setArtToLista(ArrayList<Articulo> articulo)
+	public void crearLista(ArrayList<Articulo> articulo)
         {
                 Articulo art1 = new Articulo("Pantalla LED", "50 pulgadas full HD",10500);
                 Articulo art2 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);

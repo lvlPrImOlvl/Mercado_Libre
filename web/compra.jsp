@@ -27,19 +27,19 @@
         dinero = (float)0;
         }
         if(dinero>0 && user!=null){
-            prueba.setArtToLista(articulo);
-           //out.println( articulo.imprimirLista(lista)+"Hola prueba");     
+            prueba.crearLista(articulo);
+           //out.println( articulo.imprimirLista(lista)+"Hola prueba");  
         %>
         <div>
             Añadir compra a 
            <form action="añadir.jsp" method="POST">
                <%
-                out.println(Producto.imprimirOpciones(lista,"agregar"));
+                //out.println(Articulo.imprimirOpciones(lista,"agregar"));
         }else{
             out.println("Error de Datos");
         }
                %>
-               <input type="submit" value="agregar">
+               <!--<input type="submit" value="agregar">-->
            </form> 
         </div>
         %>
