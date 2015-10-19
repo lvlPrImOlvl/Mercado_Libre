@@ -14,7 +14,6 @@
         <title>Mercado Libre Compras</title>
     </head>
     <body>
-        <h1>Bienvenido a la tienda de compras</h1>
         <%
             
         int dinero;
@@ -34,8 +33,12 @@
         
         if(dinero >= 1)
         {
-                if (!usuario.equals(""))
+                if (!usuario.equals(""))        /*Si ya todo esta bien*/
                 {    
+                    %>
+                    <h1>Bienvenido a la tienda de compras</h1>
+                    <h2>Estos son los productos que estan a la venta</h2> 
+                    <%
                     ArrayList<Articulo> lista= new ArrayList<Articulo>();
                     art.crearLista(lista);
                    /*out.println( Producto.imprimirLista(lista)+"Hola prueba");     */
@@ -44,7 +47,8 @@
                     <div>
                     Añadir compra a 
                     <form action="añadir.jsp" method="POST">
-                    <%
+                    <input type="submit" value="agregar">
+        <%
                  /*  out.println(Articulo.imprimirOpciones(lista,"agregar"));*/
                 }else
                 {
@@ -53,8 +57,8 @@
         }else{
             out.println("Ingrese el dinero con el que cuenta");
         }
-               %>
-               <input type="submit" value="agregar">
+        %>
+               
            </form> 
         </div>
     </body>
