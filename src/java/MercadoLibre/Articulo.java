@@ -34,7 +34,8 @@ public class Articulo {
 		listaArticulos.add(art3);
 	}
         
-	public String imprimirLista(){
+	public String imprimirLista()
+        {
                 Articulo toPrint;
                 articulo="";
 		articulo.concat("<ul>");
@@ -47,9 +48,11 @@ public class Articulo {
 		}
 		articulo=articulo+"</ul>";
 		return articulo;
-
 	}        
         
+	public static String imprimirOpciones(){
+
+	}        
         
     
 }
