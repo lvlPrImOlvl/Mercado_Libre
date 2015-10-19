@@ -14,34 +14,48 @@
         <title>Mercado Libre Compras</title>
     </head>
     <body>
+        <h1>Bienvenido a la tienda de compras</h1>
         <%
+            
         int dinero;
-        String usuario;
-        String RFC;
-        Articulo prueba = new Articulo();
-        ArrayList<Articulo> articulo= new ArrayList<Articulo>();
+        String usuario= request.getParameter("usuario");
+        String RFC= request.getParameter("RFC");
         
-        usuario= request.getParameter("usuario");
-        RFC= request.getParameter("RFC");
+        Articulo art = new Articulo();
+        
+        try
+        {
         dinero= Integer.parseInt(request.getParameter("dinero"));
+        }
+        catch(Exception e)
+        {
+        dinero = 0;
+        }
         
-        if(dinero > 0 && usuario != null){
-            prueba.crearLista(articulo);
-        %>
-        HOLA
-        <div>
-            Añadir compra a 
-           <form action="añadir.jsp" method="POST">
-               <%
-                //out.println(Articulo.imprimirOpciones(lista,"agregar"));
+        if(dinero >= 1)
+        {
+                if (!usuario.equals(""))
+                {    
+                    ArrayList<Articulo> lista= new ArrayList<Articulo>();
+                    art.crearLista(lista);
+                   /*out.println( Producto.imprimirLista(lista)+"Hola prueba");     */
+
+                    %>
+                    <div>
+                    Añadir compra a 
+                    <form action="añadir.jsp" method="POST">
+                    <%
+                 /*  out.println(Articulo.imprimirOpciones(lista,"agregar"));*/
+                }else
+                {
+                    out.println("Ingresa un usuario valido!");
+                }
         }else{
-            out.println("Porfavor ingrese al menos un usuario y dinero disponible!");
+            out.println("Ingrese el dinero con el que cuenta");
         }
                %>
-               <input type="submit" value="comprar">
+               <input type="submit" value="agregar">
            </form> 
         </div>
-        %>
-        
     </body>
 </html>
