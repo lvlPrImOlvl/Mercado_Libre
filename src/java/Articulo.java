@@ -29,5 +29,7 @@ public class Articulo {
 		articulo.add(art2);
 		articulo.add(art3);
 	}
+        
+        
     
 }

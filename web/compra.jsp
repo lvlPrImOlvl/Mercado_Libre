@@ -22,21 +22,21 @@
         String rfc= request.getParameter("RFC");
         
         try{
-        dinero= Float.parseFloat(request.getParameter("Dinero"));
+        dinero= Integer.parseInt(request.getParameter("Dinero"));
         }catch(Exception e){
         dinero = (float)0;
         }
         if(dinero>0 && user!=null){
             prueba.crearLista(articulo);
-           //out.println( articulo.imprimirLista(lista)+"Hola prueba");  
         %>
+        
         <div>
             Añadir compra a 
            <form action="añadir.jsp" method="POST">
                <%
                 //out.println(Articulo.imprimirOpciones(lista,"agregar"));
         }else{
-            out.println("Error de Datos");
+            out.println("Porfavor ingrese al menos un usuario y dinero disponible!");
         }
                %>
                <input type="submit" value="comprar">
