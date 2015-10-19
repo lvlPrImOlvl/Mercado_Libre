@@ -39,8 +39,16 @@
                     <h1>Bienvenido a la tienda de compras</h1>
                     <h2>Estos son los productos que estan a la venta</h2> 
                     <%
-                    ArrayList<Articulo> lista= new ArrayList<Articulo>();
-                    art.crearLista(lista);
+                    out.println("<FORM ACTION=RealizarCompra.jsp METHOD=post>");
+                    out.println("<b>Electronica:</b><br>");
+                    out.println("<input type=checkbox name=estereo >Estereo Sony 7.1 Canales<br>");
+                    out.println("<input type=checkbox name=F >XBOX ONE Halo edition <br>");
+                    out.println("<input type=checkbox name=N >Audifonos Mr Dre Profesional beats<br>");
+                    out.println("<br><b>Linea Blanca</b><br>");
+                    out.println("<input type=checkbox name=estereo >Refrigerador MABE con WIFI<br>");
+                    out.println("<input type=checkbox name=F >Lavadora Samsung con centrifuga 20 Kg<br>");
+                    out.println("<input type=checkbox name=N >Microondas Mabe con parrilla<br>");
+                    out.println("</FORM>");
                    /*out.println( Producto.imprimirLista(lista)+"Hola prueba");     */
 
                     %>
