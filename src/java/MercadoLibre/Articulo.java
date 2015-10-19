@@ -13,7 +13,9 @@ public class Articulo {
     String nombre;
     String descripcion;
     int precio;
-	
+    String articulo;
+    ArrayList<Articulo> listaArticulos= new ArrayList<Articulo>();
+    
         public Articulo(){}
 	public Articulo(String nombre, String descripcion, int precio)
         {
@@ -27,23 +29,24 @@ public class Articulo {
                 Articulo art1 = new Articulo("Pantalla LED", "50 pulgadas full HD",10500);
                 Articulo art2 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);
                 Articulo art3 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);
-		articulo.add(art1);
-		articulo.add(art2);
-		articulo.add(art3);
+		listaArticulos.add(art1);
+		listaArticulos.add(art2);
+		listaArticulos.add(art3);
 	}
         
-	public String imprimirLista(ArrayList<Articulo> lista){
-		Iterator<Articulo> iterador = lista.iterator();
-		String salida="";
-		salida.concat("<ul>");
-		while(iterador.hasNext())
+	public String imprimirLista(){
+                Articulo toPrint;
+                articulo="";
+		articulo.concat("<ul>");
+		Iterator<Articulo> Iterator_Print = listaArticulos.iterator();
+		while(Iterator_Print.hasNext())
 		{
-		Producto elemento = iterador.next();
+		toPrint = Iterator_Print.next();
 
-		salida=salida+"<li>"+elemento.nombre+"</li>"+"<li>"+elemento.descripcion+"</li>"+"<li>"+Float.toString(elemento.precio)+" pesos"+"</li>";
+		articulo = articulo + "<li>" + toPrint.nombre + "</li>" + "<li>" + toPrint.descripcion + "</li>" + "<li>" + toPrint.precio + " pesos" + "</li>";
 		}
-		salida=salida+"</ul>";
-		return salida;
+		articulo=articulo+"</ul>";
+		return articulo;
 
 	}        
         
