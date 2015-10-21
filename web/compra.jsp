@@ -13,19 +13,38 @@
         <title>Mercado Libre Compras</title>
     </head>
     <body>
-        <%
-            
-        int dinero=0;
-        String usuario="";
-        String RFC="";
+        <%  
+       
+        String usuario = request.getParameter("usuario");
+        String RFC= request.getParameter("RFC");
+        String dinero = request.getParameter("dinero");
+       
+        if (dinero.length() > 0)
+        {   
+                if (Integer.parseInt(dinero ) >=1)
+                {
+                    if ( usuario.length() > 0)
+                    {
+                    ////
+                        
+                    /////
+                    }
+                    else
+                    {
+                    out.println("Por favor ingresa un usuario para poder continuar");
+                    }
+                }
+                else 
+                {
+                out.println("No ingresaste dinero suficiente para comprar ningun articulo");
+                }
+        }else
+        {
+            out.println("Ingresa la cantidad de dinero que tienes para poder continuar");
+        }
         
-        request.getSession().setAttribute("usuario",usuario);
-        request.getSession().setAttribute("RFC",RFC);
-        request.getSession().setAttribute("dinero",dinero);
-        out.println(usuario);
-        out.println(dinero);
-        out.println(RFC);
         %>
+        SIGUE ACA        HOLA
         
     </body>
 </html>
