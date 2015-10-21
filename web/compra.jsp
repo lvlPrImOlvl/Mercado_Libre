@@ -45,9 +45,13 @@
                     out.println( art.imprimirLista());
                     out.print(art.imprimirOpciones());
                     %>
-                    <div align="center">
+                    <div align="left">
                         <input type="submit" value="Agregar a Carrito">
                     </div>
+                    <h2>Carrito de compra</h2>
+                    <%
+                    out.println(art.imprimirCarritoCompras());
+                    %>
         <%  
                  /*  out.println(Articulo.imprimirOpciones(lista,"agregar"));*/
                 }else

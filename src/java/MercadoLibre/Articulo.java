@@ -16,8 +16,8 @@ public class Articulo {
     String articulo;
     Articulo toPrint;
     Iterator<Articulo> Iterator_Print;
-    
     ArrayList<Articulo> listaArticulos= new ArrayList<Articulo>();
+    ArrayList<Articulo> carritoCompras= new ArrayList<Articulo>();
     
         public Articulo(){}
 	public Articulo(String nombre, String descripcion, int precio)
@@ -35,6 +35,7 @@ public class Articulo {
 		listaArticulos.add(art1);
 		listaArticulos.add(art2);
 		listaArticulos.add(art3);
+                carritoCompras.add(art1);
 	}
         
 	public String imprimirLista()
@@ -65,7 +66,27 @@ public class Articulo {
             }
             articulo=articulo+"</select>";
             return articulo;
-	}        
+	} 
+        
+	public String imprimirCarritoCompras(){
+            
+            articulo="";
+            articulo.concat("<ul>");
+            Iterator_Print = carritoCompras.iterator();
+            while(Iterator_Print.hasNext())
+            {
+            toPrint = Iterator_Print.next();
+                    articulo = articulo + "<li>" + toPrint.nombre +" "+ toPrint.descripcion +" $"+ toPrint.precio + "</li>";
+            }
+            articulo=articulo+"</ul>";
+            return articulo;
+	}
+        
+        public void agregarArticulo()
+        {
+            Articulo art2 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);
+            carritoCompras.add(art2);
+        }
         
     
 }
