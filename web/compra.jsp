@@ -18,14 +18,23 @@
         String usuario = (String)request.getSession().getAttribute("usuario");
         String RFC= (String)request.getSession().getAttribute("RFC");
         String dinero = (String)request.getSession().getAttribute("dinerop");
+        ArrayList<Articulo> articulos = (ArrayList<Articulo>)request.getSession().getAttribute("articulos");
+        
         
         if ((usuario == null) || (RFC == null) || (dinero == null))
         {
             usuario=request.getParameter("usuario");
             RFC=request.getParameter("RFC");
             dinero=request.getParameter("dinero");
+            
         }
        
+        if (articulos == null)
+        {
+            articulos= new ArrayList<Articulo>();
+        }
+            
+        
         if (dinero.length() > 0)
         {   
                 if (Integer.parseInt(dinero ) >=1)
