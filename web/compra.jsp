@@ -15,10 +15,11 @@
     <body>
         <%  
        
+        Articulo art = new Articulo();
         String usuario = (String)request.getSession().getAttribute("usuario");
         String RFC= (String)request.getSession().getAttribute("RFC");
         String dinero = (String)request.getSession().getAttribute("dinerop");
-        ArrayList<Articulo> articulos = (ArrayList<Articulo>)request.getSession().getAttribute("articulos");
+        ArrayList<Articulo> articulos = articulos= new ArrayList<Articulo>();
         
         
         if ((usuario == null) || (RFC == null) || (dinero == null))
@@ -28,13 +29,7 @@
             dinero=request.getParameter("dinero");
             
         }
-       
-        if (articulos == null)
-        {
-            articulos= new ArrayList<Articulo>();
-        }
-            
-        
+ 
         if (dinero.length() > 0)
         {   
                 if (Integer.parseInt(dinero ) >=1)
@@ -43,6 +38,21 @@
                     {
                     ////
                         
+                    %>
+                    <h1>Bienvenido a la tienda de compras</h1>
+                    <h2>Estos son los productos que estan a la venta</h2> 
+                    <%
+                    art.crearLista();
+                    out.println( art.imprimirLista());
+                    out.print(art.imprimirOpciones());
+                    %>
+                    <div align="left">
+                    <input type="submit" value="Agregar a Carrito">
+                    </div>
+                    <h2>Carrito de compra</h2>
+                    <%
+                    out.println(art.imprimirCarritoCompras());                      
+
                     /////
                     }
                     else
