@@ -20,6 +20,7 @@
         String RFC= (String)request.getSession().getAttribute("RFC");
         String dinero = (String)request.getSession().getAttribute("dinerop");
         ArrayList<Articulo> articulos = articulos= new ArrayList<Articulo>();
+        ArrayList<Articulo> carrito =(ArrayList<Articulo>) request.getSession().getAttribute("carrito");
         
         
         if ((usuario == null) || (RFC == null) || (dinero == null))
@@ -37,23 +38,34 @@
                     if ( usuario.length() > 0)
                     {
                     ////
-                        
-                    %>
-                    <h1>Bienvenido a la tienda de compras</h1>
-                    <h2>Estos son los productos que estan a la venta</h2> 
-                    <%
-                    art.crearLista();
-                    out.println( art.imprimirLista());
-                    out.print(art.imprimirOpciones());
-                    %>
-                    <div align="left">
-                    <input type="submit" value="Agregar a Carrito">
-                    </div>
-                    <h2>Carrito de compra</h2>
-                    <%
-                    out.println(art.imprimirCarritoCompras());                      
+ 
+                        if(carrito == null)
+                        {
+                        carrito= new ArrayList<Articulo>();
+                        request.getSession().setAttribute("carrito", carrito);
+                        }else
+                        {
+                            %>
+                            <h1>Bienvenido a la tienda de compras</h1>
+                            <h2>Estos son los productos que estan a la venta</h2> 
 
-                    /////
+                            <%
+                            art.crearLista();
+                            out.println( art.imprimirLista());
+                            out.print(art.imprimirOpciones());
+                            %>
+
+                            <div align="left">
+                            <input type="submit" value="Agregar a Carrito">
+                            </div>
+
+
+                            <h2>Carrito de compra</h2>
+                            <%
+                            out.println(art.imprimirCarritoCompras());                      
+
+                        /////
+                        }
                     }
                     else
                     {
