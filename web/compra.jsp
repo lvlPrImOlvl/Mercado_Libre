@@ -58,8 +58,6 @@
             out.println("Ingrese el dinero con el que cuenta");
         }
         %>
-               
-           </form> 
 
     </body>
 </html>
