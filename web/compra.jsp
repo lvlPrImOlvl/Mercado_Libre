@@ -53,19 +53,11 @@
                             <form action="compra.jsp" method="POST">
                                 <%
                                 out.println(art.imprimirListaArticulos(articulos));
-                                //request.getSession().setAttribute("User",user);
-                                //dinero=money.toString();
-                                //request.getSession().setAttribute("Dinero",dinero);
+                                out.print(art.imprimirOpciones(articulos));
                                  %>
-                                <input type="submit" value="agregar">
+                                <input type="submit" value="Agregar a Carrito">
                             </form>
-                           
-
-                            <div align="left">
-                            <input type="submit" value="Agregar a Carrito">
-                            </div>
-
-
+                                
                             <h2>Carrito de compra</h2>
                             <%
                             out.println(art.imprimirCarritoCompras());                      

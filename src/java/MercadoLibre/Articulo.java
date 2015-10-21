@@ -53,10 +53,10 @@ public class Articulo {
 		return articulo;
 	}        
         
-	public String imprimirOpciones(){
+	public String imprimirOpciones(ArrayList<Articulo> articulos){
             
             articulo= " ";
-            Iterator_Print = listaArticulos.iterator();
+            Iterator_Print = articulos.iterator();
             
             articulo = articulo + "<select name='agregar"+ "'>";
             while (Iterator_Print.hasNext())
