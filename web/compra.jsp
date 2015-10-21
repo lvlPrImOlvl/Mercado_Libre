@@ -21,7 +21,7 @@
         String dinero = (String)request.getSession().getAttribute("dinerop");
         ArrayList<Articulo> articulos = articulos= new ArrayList<Articulo>();
         ArrayList<Articulo> carrito =(ArrayList<Articulo>) request.getSession().getAttribute("carrito");
-        
+        art.crearLista(articulos);
         
         if ((usuario == null) || (RFC == null) || (dinero == null))
         {
@@ -49,11 +49,17 @@
                             <h1>Bienvenido a la tienda de compras</h1>
                             <h2>Estos son los productos que estan a la venta</h2> 
 
-                            <%
-                            art.crearLista();
-                            out.println( art.imprimirLista());
-                            out.print(art.imprimirOpciones());
-                            %>
+                            
+                            <form action="compra.jsp" method="POST">
+                                <%
+                                out.println(art.imprimirListaArticulos(articulos));
+                                //request.getSession().setAttribute("User",user);
+                                //dinero=money.toString();
+                                //request.getSession().setAttribute("Dinero",dinero);
+                                 %>
+                                <input type="submit" value="agregar">
+                            </form>
+                           
 
                             <div align="left">
                             <input type="submit" value="Agregar a Carrito">

@@ -27,22 +27,22 @@ public class Articulo {
 		this.precio=precio;
 	}
 
-	public void crearLista()
+	public void crearLista(ArrayList<Articulo> articulos)
         {
                 Articulo art1 = new Articulo("Pantalla LED", "50 pulgadas full HD",10500);
                 Articulo art2 = new Articulo("Estereo SONY", "Sonido envolvente 7.1 canales",8500);
                 Articulo art3 = new Articulo("XBOX ONE ", "Halo Edition 1 TB",7500);
-		listaArticulos.add(art1);
-		listaArticulos.add(art2);
-		listaArticulos.add(art3);
-                carritoCompras.add(art1);
+		articulos.add(art1);
+		articulos.add(art2);
+		articulos.add(art3);
+
 	}
         
-	public String imprimirLista()
+	public String imprimirListaArticulos(ArrayList<Articulo> articulos)
         {
                 articulo="";
 		articulo.concat("<ul>");
-		Iterator_Print = listaArticulos.iterator();
+		Iterator_Print = articulos.iterator();
 		while(Iterator_Print.hasNext())
 		{
 		toPrint = Iterator_Print.next();
