@@ -15,9 +15,16 @@
     <body>
         <%  
        
-        String usuario = request.getParameter("usuario");
-        String RFC= request.getParameter("RFC");
-        String dinero = request.getParameter("dinero");
+        String usuario = (String)request.getSession().getAttribute("usuario");
+        String RFC= (String)request.getSession().getAttribute("RFC");
+        String dinero = (String)request.getSession().getAttribute("dinerop");
+        
+        if ((usuario == null) || (RFC == null) || (dinero == null))
+        {
+            usuario=request.getParameter("usuario");
+            RFC=request.getParameter("RFC");
+            dinero=request.getParameter("dinero");
+        }
        
         if (dinero.length() > 0)
         {   
